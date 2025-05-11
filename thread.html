@@ -13,11 +13,7 @@
 <body>
 
     <!-- 사이트 헤더 -->
-    <header id="site-header">
-        <h1>🗾 오에도 채널</h1>
-        <p class="subtitle">익명(같지만 다 티 나는) 커뮤니티</p>
-    </header>
-
+    <div id="header-container"></div> <!-- 여기에 header.html이 삽입됨 -->
     <main>
         <!-- 게시글 제목 -->
         <section id="post">
@@ -44,6 +40,17 @@
 
         </section>
     </main>
+
+    <script>
+        // header.html 삽입 스크립트
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+    </script>
+
+
 </body>
 
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>오에도 채널</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="header-container"></div> <!-- 여기에 header.html이 삽입됨 -->
+
+    <main>
+        <!-- HOT 게시글 -->
+        <section id="hot-threads">
+            <h2>🔥 HOT 게시글</h2>
+            <ul class="thread-list" id="hot-list"></ul>
+        </section>
+
+        <!-- 3분할 게시판 -->
+        <section id="board-sections">
+            <div class="board-column">
+                <h3>📚 정보 게시판</h3>
+                <ul class="thread-list" id="info-list"></ul>
+            </div>
+            <div class="board-column">
+                <h3>💬 잡담 게시판</h3>
+                <ul class="thread-list" id="chat-list"></ul>
+            </div>
+            <div class="board-column">
+                <h3>🕵️ 익명 게시판</h3>
+                <ul class="thread-list" id="secret-list"></ul>
+            </div>
+        </section>
+        <section id="reset-section">
+            <button id="reset-button">🗑 댓글 초기화</button>
+        </section>
+
+    </main>
+
+    <script>
+        // header.html 삽입 스크립트
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+    </script>
+
+</body>
+
+</html>
