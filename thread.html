@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오에도 채널 - 게시글 보기</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/thread.js"></script>
+
+</head>
+
+<body>
+
+    <!-- 사이트 헤더 -->
+    <header id="site-header">
+        <h1>🗾 오에도 채널</h1>
+        <p class="subtitle">익명(같지만 다 티 나는) 커뮤니티</p>
+    </header>
+
+    <main>
+        <!-- 게시글 제목 -->
+        <section id="post">
+            <h2 id="post-title">[속보] 요로즈야 월세 또 밀림</h2>
+            <p class="meta"><span class="tag">생활</span> 2025/05/12</p>
+            <div class="post-content">
+                <p>요로즈야 사무소 건물주 왈, "이젠 익숙하다"... 근데 진짜 냄새난다.</p>
+            </div>
+        </section>
+
+        <!-- 댓글 목록 -->
+        <section id="comments-section">
+            <h3>💬 댓글</h3>
+            <ul id="comments" class="comment-list"></ul>
+
+            <!-- 댓글 입력 -->
+            <div id="comment-form">
+                <div class="form-top">
+                    <input type="text" id="nickname" placeholder="닉네임" />
+                    <button onclick="addComment()">댓글 작성</button>
+                </div>
+                <textarea id="newComment" placeholder="댓글을 입력하세요"></textarea>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+</html>

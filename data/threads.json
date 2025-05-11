@@ -1,0 +1,65 @@
+[
+  {
+    "id": "001",
+    "title": "【속보】요로즈야 월세 또 밀림",
+    "tag": "유머",
+    "date": "2025/05/12",
+    "category": "hot",
+    "commentCount": 2
+  },
+  {
+    "id": "002",
+    "title": "엘리자베스 정체에 대한 충격적인 제보",
+    "tag": "의문",
+    "date": "2025/05/11",
+    "category": "hot",
+    "commentCount": 1
+  },
+  {
+    "id": "003",
+    "title": "에도 물가 정리(2025년 5월)",
+    "tag": "정보",
+    "date": "2025/05/10",
+    "category": "info",
+    "commentCount": 1
+  },
+  {
+    "id": "004",
+    "title": "함께 JOY하지 않겠나?",
+    "tag": "추천",
+    "date": "2025/05/09",
+    "category": "chat"
+  },
+  {
+    "id": "005",
+    "title": "난 사실 신센구미가 싫다",
+    "tag": "고민",
+    "date": "2025/05/08",
+    "category": "secret",
+    "commentCount": 1
+  },
+  {
+    "id": "006",
+    "title": "백흑커플 조용히 응원하는 스레",
+    "tag": "잡담",
+    "date": "2025/05/08",
+    "category": "secret",
+    "commentCount": 1
+  },
+  {
+    "id": "007",
+    "title": "마요네즈 타임세일 정보",
+    "tag": "정보",
+    "date": "2025/05/08",
+    "category": "info",
+    "commentCount": 1
+  },
+  {
+    "id": "008",
+    "title": "요즘 일자리 구하기 어때?",
+    "tag": "구직",
+    "date": "2025/05/08",
+    "category": "chat",
+    "commentCount": 1
+  }
+]
