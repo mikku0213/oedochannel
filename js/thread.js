@@ -85,10 +85,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 댓글 작성
     window.addComment = function () {
-        const text = textarea.value.trim();
-        const nickname = document.getElementById("nickname")?.value.trim();
+        const text = document.getElementById("newComment").value.trim();
+        const nicknameInput = document.getElementById("nickname");
+        const nickname = isAnonymousBoard ? "익명" : nicknameInput?.value.trim();
 
-        if (!text) return;
+        if (!text || (!isAnonymousBoard && !nickname)) {
+            alert("닉네임과 댓글 내용을 모두 입력해 주세요.");
+            return;
+        }
 
         const now = new Date();
         const time = now.toISOString(); // ← 기존 yyyy/mm/dd 대신
