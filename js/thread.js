@@ -12,29 +12,37 @@ document.addEventListener("DOMContentLoaded", async () => {
     let initialComments = [];
     let isAnonymousBoard = false;
 
-    // 게시글 JSON 불러오기
+    let data = null;
+
+    // ✅ 1차 시도: fetch로 JSON 게시글 불러오기
     try {
-        const res = await fetch(`data/thread_${threadId}.json?ts=${Date.now()}`);
-        const data = await res.json();
-
-        initialComments = data.comments || [];
-        isAnonymousBoard = (data.category === "secret");
-
-        postTitleEl.textContent = data.title;
-        metaEl.innerHTML = `<span class="tag">${data.tag}</span> ${data.date}`;
-        contentEl.innerHTML = `<p>${data.content}</p>`;
-
-        // 익명 게시판이면 닉네임 입력창 숨기기
-        if (isAnonymousBoard) {
-            const nicknameInput = document.getElementById("nickname");
-            if (nicknameInput) nicknameInput.style.display = "none";
-        }
-
-        loadComments();
+        const res = await fetch(`data/thread_${threadId}.json`);
+        data = await res.json();
     } catch (err) {
+        // ✅ 2차 시도: localStorage에서 사용자 게시글 찾기
+        const local = localStorage.getItem(`thread_${threadId}`);
+        if (local) {
+            data = JSON.parse(local);
+        }
+    }
+
+    // ✅ 게시글이 존재하지 않으면 안내
+    if (!data) {
         postTitleEl.textContent = "존재하지 않는 게시글입니다.";
         contentEl.innerHTML = "<p>해당 글을 찾을 수 없습니다.</p>";
+        return;
     }
+
+    // ✅ 게시글 정보 표시
+    initialComments = data.comments || [];
+    isAnonymousBoard = (data.category === "secret");
+
+    postTitleEl.textContent = data.title;
+    metaEl.innerHTML = `<span class="tag">${data.tag}</span> ${data.date} · ${data.nickname ?? "익명"}`;
+    contentEl.innerHTML = `<p>${data.content}</p>`;
+
+    loadComments();
+
 
     // 댓글 렌더링
     function renderComment(comment) {
@@ -106,10 +114,5 @@ document.addEventListener("DOMContentLoaded", async () => {
             return isoDateStr;
         }
     }
-
-
-
-
-
 
 });
