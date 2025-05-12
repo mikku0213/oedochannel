@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             const listMap = {
                 hot: "hot-list",
                 info: "info-list",
-                chat: "chat-list",
+                local: "local-list",
                 secret: "secret-list"
             };
 
