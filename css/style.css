@@ -37,6 +37,12 @@ main {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
 }
+/* HOT 게시글 섹션 */
+#devide-section h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0.8rem;
+}
 
 /* HOT 게시글 섹션 */
 #hot-threads {
@@ -48,8 +54,9 @@ main {
 }
 
 #hot-threads h2 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.1rem;
   color: #d48806;
 }
 
@@ -61,7 +68,7 @@ ul.thread-list {
 }
 
 .thread-item {
-  padding: 1rem;
+  padding: 0.8rem;
   border-bottom: 1px solid #eee;
   transition: background 0.2s;
   display: flex;
@@ -159,22 +166,31 @@ ul.thread-list {
 .comment-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0;
 }
-
 .comment-item {
-  border-left: 4px solid #60a5fa;
-  padding: 0.4rem 0.5rem;
-  margin-bottom: 0.8rem;
-  background-color: #f9fafb;
-  border-radius: 4px;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 0.95rem;
 }
 
 .comment-item .date {
-  color: #888;
-  font-size: 0.8rem;
+  color: #6b7280;
+  font-size: 0.85rem;
   margin-left: 0.5rem;
 }
+
+.comment-item strong {
+  font-weight: bold;
+  color: #111827;
+}
+
+.comment-item p {
+  margin: 0.5rem 0 0.5rem 0;
+  white-space: pre-wrap;
+  color: #1f2937;
+}
+
 /* 댓글 입력 영역 */
 #comment-form {
   display: flex;
