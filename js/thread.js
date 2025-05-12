@@ -25,9 +25,18 @@ document.addEventListener("DOMContentLoaded", async () => {
             data = JSON.parse(local);
         }
     }
+    if (data) {
+        isAnonymousBoard = (data.category === "secret");
 
-    // ✅ 게시글이 존재하지 않으면 안내
-    if (!data) {
+        if (isAnonymousBoard) {
+            const nicknameInput = document.getElementById("nickname");
+            if (nicknameInput) {
+                nicknameInput.value = "익명";
+                nicknameInput.disabled = true;
+            }
+        }
+        // ✅ 게시글이 존재하지 않으면 안내
+    } else {
         postTitleEl.textContent = "존재하지 않는 게시글입니다.";
         contentEl.innerHTML = "<p>해당 글을 찾을 수 없습니다.</p>";
         return;
@@ -38,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     isAnonymousBoard = (data.category === "secret");
 
     postTitleEl.textContent = data.title;
-    metaEl.innerHTML = `<span class="tag">${data.tag}</span> ${data.date} · ${data.nickname ?? "익명"}`;
+    metaEl.innerHTML = `<span class="tag">${data.tag}</span> ${data.date} by ${data.nickname ?? "익명"}`;
     contentEl.innerHTML = `<p>${data.content}</p>`;
 
     loadComments();
